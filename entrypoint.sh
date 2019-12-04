@@ -32,9 +32,9 @@ INPUT_UPDATE_EXISTING="true"
 fi
 }
 
-set_title() {
-
-}
+#set_title() {
+#
+#}
 
 create_release_data() {
   RELEASE_DATA="{}"
