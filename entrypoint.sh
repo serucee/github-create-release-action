@@ -32,6 +32,13 @@ INPUT_UPDATE_EXISTING="true"
 fi
 }
 
+set_title() {
+if [  "${INPUT_UPDATE_TITLE}" !== "false" ];
+then
+RELEASE_DATA=$(echo ${RELEASE_DATA} | jq --argjson value ${INPUT_UPDATE_TITLE} '.title = $value')
+fi
+}
+
 create_release_data() {
   RELEASE_DATA="{}"
   RELEASE_DATA=$(echo ${RELEASE_DATA} | jq --arg tag $TAG '.tag_name = $tag')
@@ -54,6 +61,7 @@ create_release_data() {
     fi
   fi
   RELEASE_DATA=$(echo ${RELEASE_DATA} | jq --argjson value $PRERELEASE_VALUE '.prerelease = $value')
+  set_title
 }
 
 set_tag
