@@ -35,7 +35,7 @@ fi
 set_title() {
 if [  "${INPUT_UPDATE_TITLE}" !== "false" ];
 then
-RELEASE_DATA=$(echo ${RELEASE_DATA} | jq --argjson value ${INPUT_UPDATE_TITLE} '.name = $value')
+RELEASE_DATA=$(echo ${RELEASE_DATA} | jq --argjson value ${INPUT_UPDATE_TITLE} '.release_name = $value')
 fi
 }
 
