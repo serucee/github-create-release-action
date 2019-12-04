@@ -26,7 +26,7 @@ inputs:
     description: 'Allows to pass an already created tag, forces update_existing to true.'
     default: 'false'
     required: false
-  update_title:
+  release_title:
     description: 'Allows to pass a title for the release.'
     default: 'false'
     required: false
